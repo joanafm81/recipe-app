@@ -1,35 +1,76 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
   <title>Recipe app</title>
   <style>
-    html {
-      min-height: 100%;
-      background-image: url(https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=867&q=80);
-      background-size: cover;
-    }
-
     body {
       font-family: Roboto;
       font-weight: 400;
       font-size: 16px;
       line-height: 1.6;
+      margin: 0;
     }
 
     h1 {
-      font-size: 40px;
+      font-size: 50px;
       font-weight: 700;
       text-align: center;
-      margin-top: 150px;
-      color: white;
+      color: #d98025;
+      display: inline-block;
+      background: rgba(255, 255, 255, .1);
+      padding: 5px 10px;
+      border-radius: 10px;
     }
 
-    button {
+    h3 {
+      font-size: 26px;
+    }
+
+    header {
+      text-align: center;
+      color: #fff;
+      /* background-image: url(https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=867&q=80); */
+      background-image: url({% static 'recipes/background-dark.webp' %});
+      background-size: cover;
+      padding: 70px 40px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    nav .logo {
+      font-weight: bold;
+      color: #d98025;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      padding: 5px 10px;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    a {
+      color: #357b70;
+    }
+
+    button,
+    .button {
       border: none;
       font-family: inherit;
       background-color: #357b70;
@@ -67,43 +108,61 @@
       margin-bottom: 20px;
     }
 
-    .bottom-sheet {
-      padding: 20px;
-      text-align: center;
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 20px;
+    }
 
-      background-color: #ddd;
-      margin: 0 -20px -20px -20px;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
+    .grid-item {
+      display: block;
+      height: 200px;
+      background-size: cover;
+      position: relative;
+      border-radius: 10px;
+    }
+
+    .grid-item span {
+      display: block;
+      background: rgba(255, 255, 255, .8);
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
     }
   </style>
 </head>
 
 <body>
+  <nav>
+    <ul>
+      <li><a href="/" class="logo">Recipe App</a></li>
+      <li><a href="/recipes/list">Recipes</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </nav>
   <header>
     <h1>Recipe App</h1>
+
+    <h3>Thousands of recipes. Inspiration from around the World.</h3>
+
+    <a href="recipes/list" class="button">Start browsing recipes</a>
   </header>
 
-  <form>
-    <div class="container">
-      <div>
-        <input type="text" placeholder="username" required>
-      </div>
+  <section>
+    <h2>Latest recipes</h2>
 
-      <div>
-        <input type="password" placeholder="password" required>
-      </div>
-
-      <div>
-        <button type="submit">Login</button>
-        <!-- <button type="button" class="cancelbtn">Cancel</button> -->
-      </div>
-
-      <div class="bottom-sheet">
-        <span>Not registered? <a href="#">Create an account.</a></span>
-      </div>
+    <div class="grid-container">
+      {% for object in object_list %}
+      <a class="grid-item" style="background-image: url({{object.pic.url}});" href="{{object.get_absolute_url}}">
+        <span>{{object.name}}</span>
+      </a>
+      {% endfor %}
     </div>
-  </form>
+  </section>
+
+
 </body>
 
 </html>

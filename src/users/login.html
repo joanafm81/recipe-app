@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <title>Recipe app</title>
+  <style>
+    html {
+      min-height: 100%;
+      background-image: url(https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=867&q=80);
+      background-size: cover;
+    }
+
+    body {
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 150px;
+      color: white;
+    }
+
+    button {
+      border: none;
+      font-family: inherit;
+      background-color: #357b70;
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 3px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover,
+    button:focus {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    .container {
+      background-color: white;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px 20px 0 20px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 12px 0px #666;
+    }
+
+    .container input,
+    .container button {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    .container div {
+      margin-bottom: 20px;
+    }
+
+    .bottom-sheet {
+      padding: 20px;
+      text-align: center;
+
+      background-color: #ddd;
+      margin: 0 -20px -20px -20px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Recipe App</h1>
+  </header>
+
+  <form>
+    <div class="container">
+      <div>
+        <input type="text" placeholder="username" required>
+      </div>
+
+      <div>
+        <input type="password" placeholder="password" required>
+      </div>
+
+      <div>
+        <button type="submit">Login</button>
+        <!-- <button type="button" class="cancelbtn">Cancel</button> -->
+      </div>
+
+      <div class="bottom-sheet">
+        <span>Not registered? <a href="#">Create an account.</a></span>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
