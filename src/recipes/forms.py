@@ -17,6 +17,7 @@ DIFFICULTY__CHOICES = (
 #define class-based Form imported from Django forms
 class RecipesSearchForm(forms.Form): 
   recipe_name = forms.CharField(max_length=120, required=False)
+  ingredient = forms.CharField(max_length=50, required=False)
   max_cooking_time = forms.IntegerField(required=False)
   difficulty = forms.ChoiceField(choices=DIFFICULTY__CHOICES, required=False)
   chart_type = forms.ChoiceField(choices=CHART__CHOICES)

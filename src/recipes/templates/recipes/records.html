@@ -8,9 +8,10 @@
   <meta name="viewport" content="width=device-width" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
   <title>Recipe app</title>
   <style>
-    body {
+    /* body {
       font-family: Roboto;
       font-weight: 400;
       font-size: 16px;
@@ -90,12 +91,10 @@
       width: auto;
       height: auto;
     }
-
-    /* img {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-    } */
+ */
+    button {
+      padding: 2px;
+    }
   </style>
 </head>
 
@@ -105,11 +104,12 @@
       <li><a href="/" class="logo">Recipe App</a></li>
       <li><a href="/recipes/list">Recipes</a></li>
       <li><a href="/recipes/search">Search</a></li>
+      <li><a href="https://joanafm81.github.io/portfolio-website/" target="_blank">About me</a></li>
       <li><a href="/users/logout">Logout</a></li>
     </ul>
   </nav>
 
-  <h1> Search for recipes </h1>
+  <h1 class="header-one"> Search for recipes </h1>
 
   <hr>
   <form action="" method="POST">

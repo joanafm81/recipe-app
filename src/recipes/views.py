@@ -39,6 +39,7 @@ def records(request):
       max_cooking_time = request.POST.get('max_cooking_time')
       difficulty = request.POST.get('difficulty')
       chart_type = request.POST.get('chart_type')
+      ingredient = request.POST.get('ingredient')
       #display in terminal - needed for debugging during development only
       print (recipe_name, max_cooking_time, difficulty, chart_type)
 
@@ -49,6 +50,9 @@ def records(request):
       
       if difficulty != '0':
          qs = qs.filter(difficulty=difficulty)
+
+      # if ingredient != '':
+      #    qs = qs.filter(.contains)
 
       if qs:      #if data found
          #convert the queryset values to pandas dataframe

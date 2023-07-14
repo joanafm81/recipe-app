@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/static/style.css">
   <title>Recipe app</title>
-  <style>
+  <!-- <style>
     body {
       font-family: Roboto;
       font-weight: 400;
@@ -105,7 +106,7 @@
 
     }
   </style>
-
+ -->
 </head>
 
 <body>
@@ -114,13 +115,14 @@
       <li><a href="/" class="logo">Recipe App</a></li>
       <li><a href="/recipes/list">Recipes</a></li>
       <li><a href="/recipes/search">Search</a></li>
+      <li><a href="https://joanafm81.github.io/portfolio-website/" target="_blank">About me</a></li>
       <li><a href="/users/logout">Logout</a></li>
     </ul>
   </nav>
 
   <section class="header">
     <div class="title">
-      <h1>{{object.name}}</h1>
+      <h1 class="header-one">{{object.name}}</h1>
 
       <p>
         <i class="fas fa-fw fa-clock"></i> Cooking time<br />
